@@ -1,0 +1,99 @@
+<%- include('partials/header.ejs'); -%>
+
+    <section class="my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-3 col-lg-3 lyt_st">
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-12 mb-3 book_list_box">
+                            <h3>Best Books</h3>
+                            <ul class="list-group">
+                                <% for(let bestBooks of resultBestBooks){%>
+                                    <li class="list-group-item">
+                                      <input class="form-check-input me-1" type="checkbox" value="<%= bestBooks.id %>" aria-label="...">
+                                      <%= bestBooks.book_title %>
+                                    </li>
+                                <% } %>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-12 mb-3 book_list_box">
+                            <h3>Best Authors</h3>
+                            <ul class="list-group">
+                                <% for(let author of listAuthor){%>
+                                    <li class="list-group-item">
+                                      <input class="form-check-input me-1" type="checkbox" value="<%= author.id %>" aria-label="...">
+                                      <%= author.author_name %>
+                                    </li>
+                                <% } %>
+                              </ul>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-12 mb-3 book_list_box">
+                            <h3>Category</h3>
+                            <ul class="list-group">
+                                <% for(let category of listCategory){%>
+                                    <li class="list-group-item">
+                                      <input class="form-check-input me-1" type="checkbox" value="<%= category.id %>" aria-label="...">
+                                      <%= category.category_name %>
+                                    </li>
+                                <% } %>
+                              </ul>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-12 book_list_box">
+                            <h3>Ratings</h3>
+                            <ul class="list-group">
+                                <% for(let rating of listRating){%>
+                                    <li class="list-group-item">
+                                      <input class="form-check-input me-1" type="checkbox" value="<%= rating.id %>" aria-label="...">
+                                      <%= rating.rating_no %>
+                                    </li>
+                                <% } %>
+                              </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-9 col-lg-9 main_st">
+                    <div class="row"> 
+                        
+                        <% for(let catBooks of resultCatBooks){%>                         
+                        <div class="col-12 col-md-12 col-lg-12 mb-4 des_bx">
+                            <div class="card">
+                                <div class="card-body"> 
+                                    <div class="row">                                               
+                                        <div class="col-12 col-md-3 col-lg-3 des_bx_lyt_st">
+                                            <img src="assets/books/book-1.webp" alt="Book Heading" class="img-fluid">
+                                        </div>
+                                        <div class="col-12 col-md-9 col-lg-9 des_bx_ryt_st">
+                                            <h2 class="sh shc_1 shs_1"><%= catBooks.book_title %></h2>
+                                            <ul>
+                                                <li>
+                                                    <p class="book_ratings">
+                                                        Book Category: <%= catBooks.book_category %>
+                                                    </p> 
+                                                </li>
+                                                <li>
+                                                    <p class="book_ratings">
+                                                        Author: <%= catBooks.book_author %>
+                                                    </p> 
+                                                </li>
+                                                <li>
+                                                    <p class="book_ratings">
+                                                        Book Rating: <%= catBooks.book_rating %>/5
+                                                    </p> 
+                                                </li>
+                                            </ul> 
+                                            <p>
+                                                <%= catBooks.book_intro %>
+                                            </p>             
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                        <% } %>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<%- include('partials/footer.ejs'); -%>

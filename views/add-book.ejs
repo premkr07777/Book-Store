@@ -1,0 +1,55 @@
+<%- include('partials/header.ejs'); -%>
+
+    <section class="my-5">
+        <div class="container">
+            <div class="row">                              
+                <div class="col-12 col-md-6 col-lg-6 des_bx_ryt_st">  
+                    <div class="card">
+                        <div class="card-body"> 
+                            <h1 class="sh shc_1 shs_1">Add Book</h1>
+                            <form action="/add-book" method="post">
+                                <div class="mb-3">
+                                    <label for="book_title" class="form-label">Book Title</label>
+                                    <input type="text" name="book_title" class="form-control" autocomplete="off" autofocus="true">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="book_intro" class="form-label">Book Intro</label>
+                                    <input type="text" name="book_intro" class="form-control" autocomplete="off" autofocus="true">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="book_author" class="form-label">Book Author</label>
+                                    <select class="form-select" name="book_author" aria-label="Default select example">
+                                    <option selected>Select Book Author</option>
+                                    <% for(let author of listAuthor){%>
+                                    <option value="<%= author.author_name %>"><%= author.author_name %></option>
+                                    <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="book_category" class="form-label">Book Category</label>
+                                    <select class="form-select" name="book_category" aria-label="Default select example">
+                                    <option selected>Select Book Category</option>
+                                    <% for(let category of listCategory){%>
+                                    <option value="<%= category.category_name %>"><%= category.category_name %></option>
+                                    <% } %>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="book_rating" class="form-label">Book Rating</label>
+                                    <select class="form-select" name="book_rating" aria-label="Default select example">
+                                    <option selected>Select Book Rating</option>
+                                    <% for(let rating of listRating){%>
+                                    <option value="<%= rating.rating_no %>"><%= rating.rating_no %></option>
+                                    <% } %>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary" name="" value="">Submit Now</button>
+                            </form>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </section>
+
+<%- include('partials/footer.ejs'); -%>

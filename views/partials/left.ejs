@@ -1,0 +1,50 @@
+
+
+                <div class="col-12 col-md-3 col-lg-3 lyt_st">
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-12 mb-3 book_list_box">
+                            <h3>Best Books</h3>
+                            <ul class="list-group">
+                                <% for(let bestBooks of resultBestBooks){%>
+                                    <li class="list-group-item">
+                                      <input class="form-check-input me-1" type="checkbox" value="<%= bestBooks.id %>" aria-label="...">
+                                      <%= bestBooks.book_title %>
+                                    </li>
+                                <% } %>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-12 mb-3 book_list_box">
+                            <h3>Best Authors</h3>
+                            <ul class="list-group">
+                                <% for(let author of listAuthor){%>
+                                    <li class="list-group-item">
+                                      <input class="form-check-input me-1" type="checkbox" value="<%= author.id %>" aria-label="...">
+                                      <%= author.author_name %>
+                                    </li>
+                                <% } %>
+                              </ul>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-12 mb-3 book_list_box">
+                            <h3>Category</h3>
+                            <ul class="list-group">
+                                <% for(let category of listCategory){%>
+                                    <li class="list-group-item">
+                                      <input class="form-check-input me-1" type="checkbox" value="<%= category.id %>" aria-label="...">
+                                      <%= category.category_name %>
+                                    </li>
+                                <% } %>
+                              </ul>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-12 book_list_box">
+                            <h3>Ratings</h3>
+                            <ul class="list-group">
+                                <% for(let rating of listRating){%>
+                                    <li class="list-group-item">
+                                      <input class="form-check-input me-1" type="checkbox" value="<%= rating.id %>" aria-label="...">
+                                      <%= rating.rating_no %>
+                                    </li>
+                                <% } %>
+                              </ul>
+                        </div>
+                    </div>
+                </div>
